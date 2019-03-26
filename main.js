@@ -13,7 +13,7 @@ function initMap() {
   })
 
   var philzCoffeeInfoWindow = new google.maps.InfoWindow({
-    content: '<p>Availability: Busy</p>'
+    content: philzCoffeeMarker.title +'<p>Availability: Busy</p>'
   });
 
   philzCoffeeMarker.addListener('click', function() {
@@ -28,7 +28,7 @@ function initMap() {
   })
 
   var teaAlleyInfoWindow = new google.maps.InfoWindow({
-    content: '<p>Availability: Free</p>'
+    content: teaAlleyMarker.title + '<p>Availability: Free</p>'
   });
 
   teaAlleyMarker.addListener('click', function() {
