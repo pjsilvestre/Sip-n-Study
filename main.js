@@ -9,7 +9,10 @@ function initMap() {
     position: {lat: 37.3336, lng: -121.8849},
     map: map,
     animation: google.maps.Animation.DROP,
-    title: 'Philz Coffee'
+    title: 'Philz Coffee',
+    label: 'A',
+    color: "GREEN"
+
   })
 
   var philzCoffeeInfoWindow = new google.maps.InfoWindow({
@@ -25,7 +28,8 @@ function initMap() {
     position: {lat: 37.3354, lng: -121.8899},
     map: map,
     animation: google.maps.Animation.DROP,
-    title: 'Tea Alley'
+    title: 'Tea Alley',
+    label: 'B'
   })
 
   var teaAlleyInfoWindow = new google.maps.InfoWindow({
@@ -41,7 +45,8 @@ function initMap() {
     position: {lat: 37.3312, lng: -121.8870},
     map: map,
     animation: google.maps.Animation.DROP,
-    title: 'Caffee Frascati'
+    title: 'Caffee Frascati',
+    label: 'C'
   })
 
   var caffeFrascatiInfoWindow = new google.maps.InfoWindow({
