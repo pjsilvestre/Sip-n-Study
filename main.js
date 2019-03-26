@@ -3,13 +3,22 @@ function initMap() {
     center: {lat: 37.3352, lng: -121.8811},
     zoom: 16
   });
-
-     var SJSUstudentMarker = new google.maps.Marker({
+  var iconBase = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
+  var markerColor = "#000000"
+  var markerfontSize = "16px"
+  var markerfontWeight = "bold"
+  //hardcoded markers for demo purposes
+   var SJSUstudentMarker = new google.maps.Marker({
     position: {lat: 37.3340, lng: -121.8835},
     map: map,
     animation: google.maps.Animation.DROP,
-    title: 'Philz Coffee',
-    label: 'YOU',
+    title: 'San Jose State University',
+    label: {
+    text: 'You',
+    color: markerColor,
+    fontSize: markerfontSize,
+    fontWeight: markerfontWeight
+  }
 
   })
 
@@ -26,7 +35,12 @@ function initMap() {
     map: map,
     animation: google.maps.Animation.DROP,
     title: 'Philz Coffee',
-    label: 'A',
+    label: {
+    text: 'Philz Coffee',
+    color: markerColor,
+    fontSize: markerfontSize,
+    fontWeight: markerfontWeight
+  }
 
   })
 
@@ -44,7 +58,12 @@ function initMap() {
     map: map,
     animation: google.maps.Animation.DROP,
     title: 'Tea Alley',
-    label: 'B'
+    label: {
+    text: 'Tea Alley',
+    color: markerColor,
+    fontSize: markerfontSize,
+    fontWeight: markerfontWeight
+  }
   })
 
   var teaAlleyInfoWindow = new google.maps.InfoWindow({
@@ -60,8 +79,13 @@ function initMap() {
     position: {lat: 37.3312, lng: -121.8870},
     map: map,
     animation: google.maps.Animation.DROP,
-    title: 'Caffee Frascati',
-    label: 'C'
+    title: 'Caffe Frascati',
+    label: {
+    text: 'Caffe Frascati',
+    color: markerColor,
+    fontSize: markerfontSize,
+    fontWeight: markerfontWeight
+  }
   })
 
   var caffeFrascatiInfoWindow = new google.maps.InfoWindow({
@@ -77,7 +101,12 @@ function initMap() {
     map: map,
     animation: google.maps.Animation.DROP,
     title: 'Academic Coffee',
-    label: 'D'
+    label: {
+    text: 'Academic Coffee',
+    color: markerColor,
+    fontSize: markerfontSize,
+    fontWeight: markerfontWeight
+  }
   })
 
   var academicCoffeeInfoWindow = new google.maps.InfoWindow({
@@ -96,9 +125,9 @@ var properCupMarker = new google.maps.Marker({
     title: 'The Proper Cup',
     label: {
     text: 'The Proper Cup',
-    color: "#000000",
-    fontSize: "16px",
-    fontWeight: "bold"
+    color: markerColor,
+    fontSize: markerfontSize,
+    fontWeight: markerfontWeight
   }
   })
 
@@ -109,6 +138,9 @@ var properCupMarker = new google.maps.Marker({
  properCupMarker.addListener('click', function() {
     properCupInfoWindow.open(map, properCupMarker);
   });
+
+
+
 
   function toggleBounce() {
     if (marker.getAnimation() !== null) {
