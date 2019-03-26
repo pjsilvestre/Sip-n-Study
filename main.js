@@ -20,6 +20,7 @@ function initMap() {
     philzCoffeeInfoWindow.open(map, philzCoffeeMarker);
   });
 
+
   var teaAlleyMarker = new google.maps.Marker({
     position: {lat: 37.3354, lng: -121.8899},
     map: map,
@@ -34,6 +35,23 @@ function initMap() {
   teaAlleyMarker.addListener('click', function() {
     teaAlleyInfoWindow.open(map, teaAlleyMarker);
   });
+
+  
+  var caffeFrascatiMarker = new google.maps.Marker({
+    position: {lat: 37.3312, lng: -121.8870},
+    map: map,
+    animation: google.maps.Animation.DROP,
+    title: 'Caffee Frascati'
+  })
+
+  var caffeFrascatiInfoWindow = new google.maps.InfoWindow({
+    content: caffeFrascatiMarker.title +'<p>Availability: Busy</p>'
+  });
+
+  caffeFrascatiMarker.addListener('click', function() {
+    caffeFrascatiInfoWindow.open(map, caffeFrascatiMarker);
+  });
+
 
   function toggleBounce() {
     if (marker.getAnimation() !== null) {
