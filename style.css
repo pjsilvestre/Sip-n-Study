@@ -6,11 +6,11 @@
 /* login form styling */
 form {
   width: 400px;
-  padding: 1em;
+  padding: .8em;
 }
 
 form div + div {
-  margin-top: 1em;
+  margin-top: .8em;
 }
 
 label{
@@ -26,7 +26,7 @@ input, textarea {
 }
 
 textarea {
-  height: 2em;
+  height: 1.8em;
 }
 
 textarea {
@@ -34,7 +34,7 @@ textarea {
 }
 
 button {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 
