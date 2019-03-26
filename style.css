@@ -44,3 +44,8 @@ html, body {
   margin: 0;
   padding: 0;
 }
+/* header styling */
+h1 {
+  text-align: center;
+  font-style: "Bold";
+}
