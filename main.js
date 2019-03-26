@@ -3,6 +3,23 @@ function initMap() {
     center: {lat: 37.3352, lng: -121.8811},
     zoom: 16
   });
+ 
+  var styles = {
+        default: null,
+        hide: [
+          {
+            featureType: 'poi.business',
+            stylers: [{visibility: 'off'}]
+          },
+          {
+            featureType: 'transit',
+            elementType: 'labels.icon',
+            stylers: [{visibility: 'off'}]
+          }
+        ]
+      };
+
+  map.setOptions({styles: styles['hide']});
 
   //hardcoded markers for demo purposes
   const iconBase = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
@@ -14,12 +31,23 @@ function initMap() {
     position: {lat: 37.3340, lng: -121.8835},
     map: map,
     animation: google.maps.Animation.DROP,
+   icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 20,
+        fillOpacity: 1,
+        fillColor: " #0010ff",
+        color:  "#0010ff",
+        strokeWeight: 1
+    },
+    animation: google.maps.Animation.DROP,
     title: 'San Jose State University',
     label: {
-      text: 'You',
-      color: markerColor,
-      fontSize: markerfontSize,
-      fontWeight: markerfontWeight }
+    text: 'You',
+    color: "Yellow",
+    fontSize: markerfontSize,
+    fontWeight: markerfontWeight,
+    
+  }
     })
 
   var SJSUstudentInfoWindow = new google.maps.InfoWindow({
