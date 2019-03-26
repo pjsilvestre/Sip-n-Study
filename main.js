@@ -1,7 +1,9 @@
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.3352, lng: -121.8811},
-    zoom: 16
+    zoom: 16,
+    disableDefaultUI: true
+
   });
  
   var styles = {
@@ -33,7 +35,7 @@ function initMap() {
     animation: google.maps.Animation.DROP,
    icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 20,
+        scale: 18,
         fillOpacity: 1,
         fillColor: " #0010ff",
         color:  "#0010ff",
@@ -43,7 +45,7 @@ function initMap() {
     title: 'San Jose State University',
     label: {
     text: 'You',
-    color: "Yellow",
+    color: "White",
     fontSize: markerfontSize,
     fontWeight: markerfontWeight,
     
