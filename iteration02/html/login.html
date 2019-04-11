@@ -3,8 +3,29 @@
   <head>
     <title>Sip 'n' Study | Login</title>
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <script href="../scripts/main.js"></script>
+    <script type="text/javascript">
+      function validate() {
+            
+             var username = document.getElementById("username").value;
+             var password = document.getElementById("password").value;
+             
+             
+
+             if(username == "username" && password == "password")
+             {
+                alert("Login Successful");
+             }
+             else
+             {
+                alert("Login Failed");
+             }
+
+            }
+    </script>
   </head>
   <body>
+    
       <div id="navigationLinks">
         <a href="./index.html">Sip 'n' Study</a>
         <br>
@@ -13,15 +34,16 @@
       <form>
         <div>
           <label for="username">Username: </label>
-          <input type="text" id="username" name="username">
+          <input id ="username" type="text" placeholder="Enter Username" name="username" required>
         </div>
         <div>
           <label for="password">Password: </label>
-          <input type="text" id="password" name="password">
+          <input id="password" type="password" placeholder="Enter Password" name="password" required>
         </div>
         <div class="button">
-          <button type="login">Login</button>
+          <button id="loginbutton" type="login" onclick="validate()">Login</button>
         </div>
+        
       </form>
   </body>
 </html>
