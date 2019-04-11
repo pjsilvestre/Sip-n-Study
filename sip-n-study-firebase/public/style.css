@@ -10,46 +10,18 @@
   padding: 1em;
 }
 
-/* login form styling */
-form {
-  width: 400px;
-  padding: 1em;
-}
-
-form div + div {
-  margin-top: 1em;
-}
-
-label{
-  font-size: 1.5em;
-  display: inline-block;
-  width: 100px;
-  text-align: left;
-}
-
-input, textarea {
-  width: 300px;
-  box-sizing: border-box;
-}
-
-textarea {
-  height: 2em;
-}
-
-textarea {
-  vertical-align: top;
-}
-
-button {
-  font-size: 1.5em;
-}
-
 /* misc styling*/
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: #0055A2; /* Spartan Blue */
+
+}
+
+h1 {
+  color: white;
+  padding: 1em;
 }
 
 a {
