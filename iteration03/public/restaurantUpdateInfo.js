@@ -9,11 +9,11 @@ function initApp()
       var emailVerified = user.emailVerified;
       var photoURL = user.photoURL;
       var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
+      uid = user.uid;
       var providerData = user.providerData;
       // ...
 
-      document.getElementById("user").textContent="Login sucessful. Welcome, " + user.displayName + ".";
+      //document.getElementById("user").textContent="Login sucessful. Welcome, " + user.displayName + ".";
     } else {
       // User is signed out.
       // ...
@@ -24,11 +24,21 @@ function initApp()
 var db = firebase.firestore();
 
 function updateButtonClicked(){
-	db.collection("restaurants").doc(uid).set({restaurantName: "hi"}); 
+	var selector = document.getElementById('availability');
+	var value = selector[selector.selectedIndex].value;
+	db.collection("restaurants").doc(uid).set({isBusy: value}); 
 
 	
 
 }
+
+window.onload = function() {
+  initApp();
+}
+
+//"4AWJVdDkqDOZLkHoIzsL0QL8uPK2"
+
+
 
 
 
