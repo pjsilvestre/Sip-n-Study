@@ -11,7 +11,7 @@
       <a href="index.html">Sip 'n' Study</a>
       <br>
     </div>
-
+    
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
     <!-- Loads the entire Firebase JavaScript SDK -->
@@ -29,6 +29,20 @@
         // Initialize Firebase
         firebase.initializeApp(config);
     </script>
+
+    <div id = "addRestaurantForm">
+          <form class = "myform">Restaurant Name<br>
+          <input id = "restaurantName"><br><br>Address<br>
+          <input id = "address"><br><br>Availability<br>
+          <select id= "isBusy">
+            <option value="true">Busy</option>
+            <option value="false">Not Busy</option>
+        </select>
+      </form>
+      <br>
+      <button onclick="addRestaurant()"> Add Restaurant </button>
+    </div>
+
     <script type="text/javascript" src="addRestaurant.js"></script>
   </body>
 </html>

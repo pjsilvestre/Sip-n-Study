@@ -12,7 +12,7 @@
 
   /* restaurantDatabaseTable styling */
   #restaurantDatabaseTable {
-    padding: 2em;
+    padding: 1em;
   }
 
   table {
@@ -68,5 +68,11 @@
   #loader {
     color: white;
     font-size: 1.5em;
+    padding: 1em;
+  }
+  
+  #addRestaurantForm {
+    color: white;
+    font-size:1.5em;
     padding: 1em;
   }
