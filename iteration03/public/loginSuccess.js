@@ -1,4 +1,10 @@
-// Initialize the FirebaseUI Widget using Firebase.
+
+// Firebase App (the core Firebase SDK) is always required and must be listed first
+import * as firebase from "firebase/app";
+// Add the Firebase products that you want to use
+import "firebase/auth";
+import "firebase/database";
+
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 //Create a variable to represent the user that is currently logged in 
@@ -21,16 +27,26 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
   );
 
-  // Initialize Firebase
-  var config = {
+
+
+
+
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
     apiKey: "AIzaSyA-g1koyEJWHPMBQ3ZTBhVEOoHCvK3eJgk",
     authDomain: "careful-cosine-235618.firebaseapp.com",
     databaseURL: "https://careful-cosine-235618.firebaseio.com",
     projectId: "careful-cosine-235618",
     storageBucket: "careful-cosine-235618.appspot.com",
     messagingSenderId: "221578522075"
-  };
-  firebase.initializeApp(config);
+};
 
-// The start method will wait until the DOM is loaded.
-ui.start('#firebaseui-auth-container', uiConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
+
+
+
+

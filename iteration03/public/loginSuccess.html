@@ -8,6 +8,9 @@
     <script type="text/javascript" src = "loginSuccess.js"></script>
   </head>
   <body>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
+        
 		<div id="navigationLinks">
       <a href="index.html">Sip 'n' Study</a>
       <br>
@@ -18,40 +21,7 @@
 
 
       <!-- The surrounding HTML is left untouched by FirebaseUI.
-     Your app may use that space for branding, controls and other customizations.-->
-     <div id="firebaseui-auth-container"></div>
-     <div id="loader">Fetching Your User Information</div>
-     <p id = "name"> Name: </p>
-     <p id = "email"> E-mail: </p>
-     <p id = "emailVerified"> Email Verification Status: </p>
- 
-     <!-- Firebase App is always required and must be first -->
-     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
- 
-     <!-- Add additional services that you want to use -->
-     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
-     <!-- <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script> -->
-     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-messaging.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-functions.js"></script>
- 
-     <!-- Comment out (or don't include) services that you don't want to use -->
-     <!-- <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-storage.js"></script> -->
- 
-     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-     <script>
-       // Initialize Firebase
-       var config = {
-         apiKey: "AIzaSyA-g1koyEJWHPMBQ3ZTBhVEOoHCvK3eJgk",
-         authDomain: "careful-cosine-235618.firebaseapp.com",
-         databaseURL: "https://careful-cosine-235618.firebaseio.com",
-         projectId: "careful-cosine-235618",
-         storageBucket: "careful-cosine-235618.appspot.com",
-         messagingSenderId: "221578522075"
-       };
-       firebase.initializeApp(config);
-     </script>
- 
+     
      <!----<script type="text/javascript" src = "loginSuccess.js"></script>-->
    </body>
  </html>
