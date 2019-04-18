@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sip 'n' Study | Login Successful</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src = "loginSuccess.js"></script>
   </head>
   <body>
 		<div id="navigationLinks">
       <a href="index.html">Sip 'n' Study</a>
 		</div>
     <h1 id="user"></h1>
-    <h2 id = "addRestaurantPrompt">
-      <p>Would you like to 
-          <a href= "addRestaurant.html">add a restaurant?</a>
-        </p>
-    </h2>
+
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
     <!-- Loads the entire Firebase JavaScript SDK -->
@@ -34,7 +29,16 @@
         // Initialize Firebase
         firebase.initializeApp(config);
     </script>
-   </body>
- </html>
+
+  <div id='addRestaurantPrompt'>
+     <h2 id = "addRestaurantPrompt">
+       <p id='addRestaurantPrompt'>You haven't added a restaurant.  
+        <a id = 'addRestaurantPrompt'href= "addRestaurant.html">Would you like to add one?</a>
+      </p>
+    </h2> 
+  </div>
+  
+  <script type="text/javascript" src = "loginSuccess.js"></script>
+
   </body>
-</html>
+ </html>
