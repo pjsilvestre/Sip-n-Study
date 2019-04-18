@@ -12,7 +12,7 @@ function initApp()
       var providerData = user.providerData;
       // ...
 
-      document.getElementById("user").textContent="Login sucessful. Welcome, " + user.displayName + ". Would you";
+      document.getElementById("user").textContent="Login sucessful. Welcome, " + user.displayName + ".";
     } else {
       // User is signed out.
       // ...
