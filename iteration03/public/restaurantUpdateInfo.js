@@ -1,5 +1,5 @@
-
-cfunction initApp()
+var uid;
+function initApp()
 {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -23,11 +23,12 @@ cfunction initApp()
 
 var db = firebase.firestore();
 
-updateButton.addEventListener("click", function(){
+function updateButtonClicked(){
+	db.collection("restaurants").doc(uid).set({restaurantName: "hi"}); 
 
 	
 
-});
+}
 
 
 
