@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sip 'n' Study</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
   </head>
   <body>
 		<div id="navigationLinks">
@@ -17,6 +19,8 @@
     <div id="map">
 		  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFwBkGcgvT9F8X8htqtxDj9r9OM8QUcE&callback=initMap" async defer></script>
     </div>
+    <br>
+ 
     <script type="text/javascript" src = "map.js"></script>
 
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
@@ -36,6 +40,51 @@
         // Initialize Firebase
         firebase.initializeApp(config);
     </script>
+
+    <div id="table">
+      <table>
+        <thead>
+          <tr>
+              <th>Restaurant Name</th>
+              <th>Address</th>
+              <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+    
+    <script type = "text/javascript">
+        var db = firebase.firestore();
+        db.collection("restaurants").get().then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
+
+            // Insert a row in the table at the last row
+            var newRow   = tableRef.insertRow(tableRef.rows.length);
+
+            // Insert a cell in the row at index 0
+            var nameCell  = newRow.insertCell(0);
+            var addressCell = newRow.insertCell(1);
+            var availabilityCell = newRow.insertCell(2);
+
+            // Append a text node to the cell
+            var newText  = document.createTextNode(doc.data().restaurantName)
+            var newText1  = document.createTextNode(doc.data().address);
+            var newText2  = document.createTextNode(doc.data().isBusy);
+
+            nameCell.appendChild(newText);
+            addressCell.appendChild(newText1);
+            availabilityCell.appendChild(newText2);
+          });
+        });
+    </script>
+
+
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

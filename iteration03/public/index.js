@@ -20,7 +20,6 @@ function revealAddRestaurant(){
   })
 }
 
-
 window.onload = function() {
   changeLoginToLogout();
   revealAddRestaurant();
