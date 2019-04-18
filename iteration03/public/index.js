@@ -12,7 +12,16 @@ function changeLoginToLogout(){
   });
 }
 
+function revealAddRestaurant(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      document.getElementById("addRestaurant").textContent = "Add a Restaurant";
+    }
+  })
+}
+
 
 window.onload = function() {
   changeLoginToLogout();
+  revealAddRestaurant();
 }
