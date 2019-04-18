@@ -10,11 +10,30 @@
 		<div id="navigationLinks">
       <a href="index.html">Sip 'n' Study</a>
       <br>
-			<a href="login.html">Login</a>
-		</div>
+			<a id="login" href="login.html">Login</a>
+    </div>
     <div id="map">
 		  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFwBkGcgvT9F8X8htqtxDj9r9OM8QUcE&callback=initMap" async defer></script>
     </div>
     <script type="text/javascript" src = "map.js"></script>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Loads the entire Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+
+    <script>
+        var config = {
+          apiKey: "AIzaSyA-g1koyEJWHPMBQ3ZTBhVEOoHCvK3eJgk",
+          authDomain: "careful-cosine-235618.firebaseapp.com",
+          databaseURL: "https://careful-cosine-235618.firebaseio.com",
+          projectId: "careful-cosine-235618",
+          storageBucket: "careful-cosine-235618.appspot.com",
+          messagingSenderId: "221578522075"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
