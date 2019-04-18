@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sip 'n' Study | Add a Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+		<div id="navigationLinks">
+      <a href="index.html">Sip 'n' Study</a>
+      <br>
+    </div>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Loads the entire Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+
+    <script>
+        var config = {
+          apiKey: "AIzaSyA-g1koyEJWHPMBQ3ZTBhVEOoHCvK3eJgk",
+          authDomain: "careful-cosine-235618.firebaseapp.com",
+          databaseURL: "https://careful-cosine-235618.firebaseio.com",
+          projectId: "careful-cosine-235618",
+          storageBucket: "careful-cosine-235618.appspot.com",
+          messagingSenderId: "221578522075"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="addRestaurant.js"></script>
+  </body>
+</html>
