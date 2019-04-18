@@ -3,29 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sip 'n' Study | Login Successful</title>
+    <title>Sip 'n' Study | New Restaurant</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+  
+
   <body>
-		<div id="navigationLinks">
-      <a href="index.html">Sip 'n' Study</a>
-      <br>
-			<a href="login.html">Login</a> <br>
-			<a href="restaurantCreator.html">Create new restaurant</a> <br>
-			<a href="restaurantUpdateInfo.html"> Update your restaurant availability </a> <br>
-		</div>
-    <h1>Login successful.</h1>
+  	<style>
+		.center {
+		  margin: auto;
+		  width: 60%;
+		  /*border: 3px solid #73AD21;*/
+		  padding: 10px;
+		  text-align: center;
+
+		}
+		.myform{
+			color: white;
+			font-size: 32px;
+		}
+	</style>
 
 
 
       <!-- The surrounding HTML is left untouched by FirebaseUI.
      Your app may use that space for branding, controls and other customizations.-->
      <div id="firebaseui-auth-container"></div>
-     <div id="loader">Fetching Your User Information</div>
-     <div id = "infoField"> Name: </div>
-     <div id = "infoField"> E-mail: </div>
-     <div id = "infoField"> Email Verification: </div>
- 
      <!-- Firebase App is always required and must be first -->
      <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
  
@@ -53,8 +56,24 @@
        firebase.initializeApp(config);
      </script>
  
-     <script type="text/javascript" src = "loginSuccess.js"></script>
+     <script type="text/javascript" src = "login.js"></script>
+
+
+
+
+     <div class = "center">
+     	<h1> Update Availability </h1>
+     	<h2 class = "myform" id = "fetchedRestaurantName"> Fetched Restaurant Name Here </h2>
+      <form class = "myform">
+  			Availability<br>
+  			<select id= "availability">
+			  <option value="busy">busy</option>
+			  <option value="notbusy">not busy</option>
+		
+			</select>
+		</form>
+
+     </div>
+
    </body>
- </html>
-  </body>
 </html>
