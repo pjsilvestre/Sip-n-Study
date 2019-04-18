@@ -8,9 +8,6 @@
     <script type="text/javascript" src = "loginSuccess.js"></script>
   </head>
   <body>
-        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
-        
 		<div id="navigationLinks">
       <a href="index.html">Sip 'n' Study</a>
       <br>
@@ -18,11 +15,24 @@
 		</div>
     <h1>Login successful.</h1>
 
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
+    <!-- Loads the entire Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 
-      <!-- The surrounding HTML is left untouched by FirebaseUI.
-     
-     <!----<script type="text/javascript" src = "loginSuccess.js"></script>-->
+    <script>
+        // TODO: Replace the following with your app's Firebase project configuration
+        var config = {
+          apiKey: "AIzaSyA-g1koyEJWHPMBQ3ZTBhVEOoHCvK3eJgk",
+          authDomain: "careful-cosine-235618.firebaseapp.com",
+          databaseURL: "https://careful-cosine-235618.firebaseio.com",
+          projectId: "careful-cosine-235618",
+          storageBucket: "careful-cosine-235618.appspot.com",
+          messagingSenderId: "221578522075"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(config);
+    </script>
    </body>
  </html>
   </body>
