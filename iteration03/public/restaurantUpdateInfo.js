@@ -13,7 +13,8 @@ function initApp()
       var providerData = user.providerData;
       // ...
 
-      //document.getElementById("user").textContent="Login sucessful. Welcome, " + user.displayName + ".";
+      document.getElementById("restaurantname").textContent=displayName;
+
     } else {
       // User is signed out.
       // ...
@@ -27,7 +28,8 @@ function updateButtonClicked(){
 	var selector = document.getElementById('availability');
 	var value = selector[selector.selectedIndex].value;
 	db.collection("restaurants").doc(uid).set({isBusy: value}); 
-
+	//var availabilityvalue = db.collection.doc(uid).get(isBusy);
+	//document.getElementById("currentAvailability").textContent=availabilityvalue;
 	
 
 }
