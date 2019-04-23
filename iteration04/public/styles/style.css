@@ -5,7 +5,6 @@ body {
   padding: 0em;
   color: white;
   background-color: #0055a2; /* Spartan Blue */
-  font-size: 1em;
 }
 
 label {
@@ -38,7 +37,7 @@ h2 {
 
 #navigationLinks {
   font-size: 1.5em;
-  padding: 1em;
+  margin-bottom: 1em;
 }
 
 #loader {
@@ -53,24 +52,22 @@ h2 {
   padding: 1em;
 }
 
-/*add restaurant form div formatting*/
-#addRestaurantDiv {
-  padding-left: 20px;
-  width: 100%;
-  height: auto;
-  vertical-align: center;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-}
-
 /*buttons used for submit forms on Sip n study*/
 .submitButton {
-  padding: 15px 32px;
+  padding: 0.5em;
   background-color: white;
   color: #0055a2;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1em;
+}
+
+input {
+  padding: 0.5em;
+  width: fit-content;
+  height: 1em;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  margin-bot: 0.5em;
 }
 
 /*select dropdown forms/dropdown items used on Sip n Study*/
@@ -80,6 +77,10 @@ h2 {
   top: 100;
   left: 0;
   right: 0;
+  bottom: 100;
+  width: fit-content;
+  height: 2em;
+  font-size: 1em;
 }
 
 /* restaurantDatabaseTable styling */
@@ -88,6 +89,8 @@ h2 {
 }
 
 table {
+  margin-top: 1em;
+  margin-bottom: 1em;
   border-collapse: collapse;
   border: 2px solid rgb(200, 200, 200);
   letter-spacing: 1px;

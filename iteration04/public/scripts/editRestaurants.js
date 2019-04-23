@@ -61,7 +61,6 @@ function initSelector() {
           });
         });
     } else {
-      alert("Did you get logged out?");
     }
   });
 }
@@ -80,7 +79,7 @@ function editRestaurant() {
     if (user) {
       // User is signed in.
     } else {
-      alert("Restaurant not added! Were you logged out?");
+      alert("Restaurant not edited! Were you logged out?");
       location.assign("login.html");
     }
   });
