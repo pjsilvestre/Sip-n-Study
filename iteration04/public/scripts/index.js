@@ -8,3 +8,25 @@ function initMap()
         //disableDefaultUI: true
     });
 }
+
+function changeLoginToLogout()
+{
+    firebase.auth().onAuthStateChanged(function(user)
+    {
+        if (user)
+        {
+            document.getElementById("login").textContent = "Logout";
+            document.getElementById("login").href = "index.html";
+            document.getElementById("login").onclick = function()
+            {
+                firebase.auth().signOut();
+                location.reload();
+            }
+        }
+    });
+}
+
+window.onload = function()
+{
+    changeLoginToLogout();
+}
