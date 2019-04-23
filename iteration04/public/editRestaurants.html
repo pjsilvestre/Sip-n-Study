@@ -38,33 +38,22 @@
       firebase.initializeApp(config);
     </script>
 
-
-    <!-- reference: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form -->
-    <div id = "addRestaurantDiv">
-      <form action="/my-handling-formpage" method="post" >
-        <div>
-          <label for="restaurantName">Restaurant Name: </label><br>
-          <input type="text" id="restaurantName" name="user_restauraunt_name"><br><br>
-        </div>
-        <div>
-          <label for="address">Address: </label><br>
-          <input type="text" id="address" name="user_address"><br><br>
-        </div>
-        <div>
-          <label for="isBusy">Availability: </label><br>
-          <select class = "selector" id=isBusy>
-            <option value="true">Busy</option>
-            <option  value="false">Not Busy</option>
-          </select><br><br>
-        </div>
-      </form>
-      <!-- same call as 'addRestaurant()'s, so I will use the addRestaurant() function to do it'-->
-      <button class = "submitButton" onclick="addRestaurant()">Edit Restaurant</button><br><br>
-      <button class = "submitButton" onclick="deleteRestaurant()">Delete Restaurant</button><br><br>
+    <!-- display user's restaurants -->
+    <div id="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Restaurant</th>
+              <th>Address</th>
+              <th>Availability</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
 
 
     <!-- UPDATE SCRIPT BELOW ON PAGE-BY-PAGE BASIS, ONE .js FILE PER .html FILE -->
-    <script type="text/javascript" src="scripts/addRestaurant.js"></script>
-    <script type="text/javascript" src="scripts/deleteRestaurant.js"></script>
+    <script type="text/javascript" src="scripts/editRestaurants.js"></script>
   </body>
 </html>
