@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sip 'n' Study | Add Restaurant
-    </title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sip 'n' Study | Add Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
   <body>
     <div id="navigationLinks">
       <!-- INSERT NAVIGATION LINKS HERE -->
       <a href="index.html">Sip 'n' Study</a>
-      <br>
+      <br />
     </div>
 
     <!-- INSERT HTML CONTENT HERE IN SEPARATE DIV SECTIONS -->
@@ -39,27 +38,32 @@
     </script>
 
     <!-- reference: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form -->
-    <div id = "addRestaurantDiv">
-      <form action="/my-handling-formpage" method="post" >
+    <div id="addRestaurantDiv">
+      <form action="/my-handling-formpage" method="post">
         <div>
-          <label for="restaurantName">Restaurant Name: </label><br>
-          <input type="text" id="restaurantName" name="user_restauraunt_name"><br><br>
+          <label for="restaurantName">Restaurant Name: </label><br />
+          <input
+            type="text"
+            id="restaurantName"
+            name="user_restauraunt_name"
+          /><br /><br />
         </div>
         <div>
-          <label for="address">Address: </label><br>
-          <input type="text" id="address" name="user_address"><br><br>
+          <label for="address">Address: </label><br />
+          <input type="text" id="address" name="user_address" /><br /><br />
         </div>
         <div>
-          <label for="isBusy">Availability: </label><br>
-          <select class = "selector" id=isBusy>
+          <label for="isBusy">Availability: </label><br />
+          <select class="selector" id="isBusy">
             <option value="true">Busy</option>
-            <option value="false">Not Busy</option>
-          </select><br><br>
+            <option value="false">Not Busy</option> </select
+          ><br /><br />
         </div>
       </form>
-      <button class = "submitButton" onclick="addRestaurant()">Add Restaurant</button>
+      <button class="submitButton" onclick="addRestaurant()">
+        Add Restaurant
+      </button>
     </div>
-    
 
     <!-- UPDATE SCRIPT BELOW ON PAGE-BY-PAGE BASIS, ONE .js FILE PER .html FILE -->
     <script type="text/javascript" src="scripts/addRestaurant.js"></script>
