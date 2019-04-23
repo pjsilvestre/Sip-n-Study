@@ -16,11 +16,24 @@ a {
     padding: 1em;
 }
 
-/*   copied from iteration 03:; */
+
 #navigationLinks {
     font-size: 1.5em;
     padding: 1em;
+    /*display: inline-block;*/
+    /*align-items: center;*/
+    width: 100%;
+    height:auto;
+    vertical-align: center;
+    /*text-align: center;*/
+
   }
+#navigationItem {
+	 /*display: inline-block;*/
+	 
+	
+	 
+}
   
   /* map styling */
   #map {
@@ -87,7 +100,7 @@ a {
 
    /*select dropdown forms/dropdown items used on Sip n Study*/
    .selector {
-   	
+
 	  background-color: white;
 	  padding: 8px 16px;
 	  top: 100;

@@ -1,6 +1,6 @@
 var db = firebase.firestore();
 
-function addRestaurant()
+function deleteRestaurant()
 {
     var restaurantName = document.getElementById("restaurantName").value;
     var address = document.getElementById("address").value;
@@ -13,21 +13,27 @@ function addRestaurant()
     {
         if (user)
         {
-            db.collection("restaurants").add({
-                restaurantName: restaurantName,
-                address: address,
-                isBusy: isBusy,
-                userUID: user.uid
-            })
-            alert("Restaurant information saved!");
+            var allrestaurants = db.collection('restaurants');
+            let batch = db.batch();
+
+            allrestaurants.get().then(snapshot => {
+                snapshot.docs.forEach(doc => {
+                  batch.delete(doc.ref);
+                });
+                return batch.commit();
+              })
+            alert("Restaurant(s) Deleted!");
+
         }
         else
         {
-            alert("Restaurant information not updated! Were you logged out?");
+            alert("Restaurant not deleted! Were you logged out?");
             location.assign("login.html");
         }
+        
     });
 
     //doesn't function properly to redirect user to homepage (values not written to db)
     //location.assign("index.html");
 }
+
