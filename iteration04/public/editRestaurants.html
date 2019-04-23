@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sip 'n' Study | Edit Restaurant
-    </title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sip 'n' Study | Edit Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
   <body>
     <div id="navigationLinks">
       <!-- INSERT NAVIGATION LINKS HERE -->
       <a href="index.html">Sip 'n' Study</a>
-      <br>
+      <br />
     </div>
 
     <!-- INSERT HTML CONTENT HERE IN SEPARATE DIV SECTIONS -->
@@ -40,18 +39,55 @@
 
     <!-- display user's restaurants -->
     <div id="table">
-        <table>
-          <thead>
-            <tr>
-              <th>Restaurant</th>
-              <th>Address</th>
-              <th>Availability</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Restaurant</th>
+            <th>Address</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
+    <!-- create a selector to get which restaurant to edit -->
+    <div id="restaurantSelectorDiv">
+      <form action="/my-handling-formpage" method="post">
+        <div>
+          <label for="RestaurantName">Restaurant to Edit: </label>
+          <select class="restaurantSelector" id="restaurantSelector"> </select>
+        </div>
+      </form>
+    </div>
+
+    <!-- get new values from user to update restaurant -->
+    <div id="editRestaurantDiv">
+      <form action="/my-handling-formpage" method="post">
+        <div>
+          <label for="restaurantName">(New) Restaurant Name: </label><br />
+          <input
+            type="text"
+            id="restaurantName"
+            name="user_restauraunt_name"
+          /><br /><br />
+        </div>
+        <div>
+          <label for="address">(New) Address: </label><br />
+          <input type="text" id="address" name="user_address" /><br /><br />
+        </div>
+        <div>
+          <label for="isBusy">(New) Availability: </label><br />
+          <select class="selector" id="isBusy">
+            <option value="true">Busy</option>
+            <option value="false">Not Busy</option> </select
+          ><br /><br />
+        </div>
+      </form>
+      <button class="submitButton" onclick="editRestaurant()">
+        Edit Restaurant
+      </button>
+    </div>
 
     <!-- UPDATE SCRIPT BELOW ON PAGE-BY-PAGE BASIS, ONE .js FILE PER .html FILE -->
     <script type="text/javascript" src="scripts/editRestaurants.js"></script>

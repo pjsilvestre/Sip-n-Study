@@ -13,7 +13,6 @@ function initTable() {
     .get()
     .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
-
         var tableRef = document
           .getElementById("table")
           .getElementsByTagName("tbody")[0];
@@ -29,7 +28,13 @@ function initTable() {
         // Append a text node to the cell
         var newText = document.createTextNode(doc.data().restaurantName);
         var newText1 = document.createTextNode(doc.data().address);
-        var newText2 = document.createTextNode(doc.data().isBusy);
+        // var newText2 = document.createTextNode(doc.data().isBusy);
+        var newText2;
+        if (doc.data().isBusy) {
+          newText2 = document.createTextNode("Busy");
+        } else {
+          newText2 = document.createTextNode("Not Busy");
+        }
 
         nameCell.appendChild(newText);
         addressCell.appendChild(newText1);
