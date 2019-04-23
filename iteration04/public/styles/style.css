@@ -15,3 +15,83 @@ a {
     height: 50%;
     padding: 1em;
 }
+
+/*   copied from iteration 03:; */
+#navigationLinks {
+    font-size: 1.5em;
+    padding: 1em;
+  }
+  
+  /* map styling */
+  #map {
+    height: 50%;
+    padding: 1em;
+  }
+
+  
+  /* misc styling*/
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0055A2; /* Spartan Blue */
+  
+  }
+  
+  h1 {
+    color: white;
+    padding: 1em;
+  }
+  
+  h2 {
+    color: white;
+    padding: 1em;
+  }
+  
+  a {
+    color: white;
+  }
+  
+  #loader {
+    color: white;
+    font-size: 1.5em;
+    padding: 1em;
+  }
+  
+  #addRestaurantForm {
+    color: white;
+    font-size:1.5em;
+    padding: 1em;
+  }
+
+  /*add restaurant form div formatting*/
+  #addRestaurantDiv {
+    padding-left: 20px;
+    width: 100%;
+    height:auto;
+    vertical-align: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  /*buttons used for submit forms on Sip n study*/
+  .submitButton { 
+  	padding: 15px 32px; 
+  	background-color: white;
+  	color: #0055A2;
+  	font-weight: bold;
+  	font-size: 20px;
+
+   }
+
+   /*select dropdown forms/dropdown items used on Sip n Study*/
+   .selector {
+   	
+	  background-color: white;
+	  padding: 8px 16px;
+	  top: 100;
+	  left: 0;
+	  right: 0;
+	 
+	}
