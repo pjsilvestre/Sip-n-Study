@@ -19,11 +19,11 @@ function addRestaurant()
                 isBusy: isBusy,
                 userUID: user.uid
             })
-            alert("Restaurant information saved!");
+            alert("Restaurant added!");
         }
         else
         {
-            alert("Restaurant information not updated! Were you logged out?");
+            alert("Restaurant not added! Were you logged out?");
             location.assign("login.html");
         }
     });
