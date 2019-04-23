@@ -9,19 +9,20 @@ function greetUser() {
   });
 }
 
-function addRestaurantPrompt() {
+function addRestaurantPrompt(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+      // User is signed in.
       var db = firebase.firestore();
-      db.collection("restaurants")
-        .get()
-        .then(function(querySnapshot) {
-          querySnapshot.foreach(function(doc) {
-            if (doc.data().userUID === user.uid) {
-              document.getElementById("addRestaurantPrompt").textContent = ";";
-            }
-          });
-        });
+      db.collection("restaurants").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          console.log(doc.data().userUID);
+          if (doc.data().userUID === user.uid)
+          {
+            document.getElementById("prompt").textContent = '';
+          }
+        })
+      });
     }
   });
 }
@@ -29,4 +30,4 @@ function addRestaurantPrompt() {
 window.onload = function() {
   greetUser();
   addRestaurantPrompt();
-};
+}
