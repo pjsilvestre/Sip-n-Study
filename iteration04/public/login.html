@@ -3,21 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sip 'n' Study</title>
+    <title>Sip 'n' Study | Login</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <script type="text/javascript" src="scripts/index.js"></script>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   </head>
   <body>
     <div id="navigationLinks">
       <!-- INSERT NAVIGATION LINKS HERE -->
       <a href="index.html">Sip 'n' Study</a>
       <br>
-      <a href="login.html">Login</a>
     </div>
 
-    <div id="map">
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFwBkGcgvT9F8X8htqtxDj9r9OM8QUcE&callback=initMap" async defer></script>
-    </div>
+    <!-- INSERT HTML CONTENT HERE IN SEPARATE DIV SECTIONS -->
+    
+    <!-- Define the HTML element where the FirebaseUI sign-in widget will be rendered. -->
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
 
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -42,6 +45,6 @@
     </script>
 
     <!-- UPDATE SCRIPT BELOW ON PAGE-BY-PAGE BASIS, ONE .js FILE PER .html FILE -->
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/login.js"></script>
   </body>
 </html>
