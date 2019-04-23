@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #0055A2; /* Spartan Blue */
+}
+
+a {
+    color: white;
+}
+
+/* map styling */
+#map {
+    height: 50%;
+    padding: 1em;
+}
