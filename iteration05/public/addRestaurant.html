@@ -14,9 +14,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFwBkGcgvT9F8X8htqtxDj9r9OM8QUcE&libraries=places"
+    ></script>
   </head>
   <body>
-
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -55,6 +58,55 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="text/javascript" src=""></script>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Sip 'n' Study</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+            <a class="nav-item nav-link" href="login.html"
+              >Restaurant Owner Login</a
+            >
+            <a class="nav-item nav-link active" href="addRestaurant.html"
+              >Add Restaurant</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="restaurantName">Restaurant name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="restaurantName"
+              placeholder="Enter restaurant name"
+            />
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="availability" />
+            <label class="form-check-label" for="availability">Busy?</label>
+          </div>
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/addRestaurant.js"></script>
   </body>
 </html>
