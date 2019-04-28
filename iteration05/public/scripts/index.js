@@ -3,7 +3,12 @@ function initMap() {
     // TODO get user location
     center: { lat: 37.3352, lng: -121.8811 },
     zoom: 16,
+    disableDefaultUI: true,
     styles: [
+      {
+        featureType: "poi.business",
+        stylers: [{ visibility: "off" }]
+      },
       { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
       { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
       { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
