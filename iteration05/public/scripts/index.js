@@ -6,9 +6,14 @@ function initMap() {
     disableDefaultUI: true,
     styles: [
       {
-        featureType: "poi.business",
+        featureType: "poi",
         stylers: [{ visibility: "off" }]
       },
+      {
+        featureType: "transit",
+        stylers: [{ visibility: "off" }]
+      },
+
       { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
       { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
       { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
@@ -89,6 +94,7 @@ function initMap() {
       }
     ]
   });
+
   infoWindow = new google.maps.InfoWindow();
 
   // Try HTML5 geolocation.
@@ -113,14 +119,70 @@ function initMap() {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error: The Geolocation service failed."
+        : "Error: Your browser doesn't support geolocation."
+    );
+    infoWindow.open(map);
+  }
+
+  function initMarkers() {
+    var db = firebase.firestore();
+    db.collection("restaurants")
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          var lat = doc.data().location.latitude;
+          var lng = doc.data().location.longitude;
+          var restaurantName = doc.data().restaurantName;
+
+          var marker = new google.maps.Marker({
+            position: { lat, lng },
+            map: map,
+            title: restaurantName,
+            animation: google.maps.Animation.DROP,
+          });
+
+          var markerInfoWindow = new google.maps.InfoWindow({
+            content: marker.title,
+          });
+
+          marker.addListener("mouseover", () => {
+            markerInfoWindow.open(map, marker);
+          });
+          marker.addListener("mouseout", () => {
+            markerInfoWindow.close();
+          });
+
+        });
+      });
+  }
+
+  initMarkers();
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation."
-  );
-  infoWindow.open(map);
+function initNavbar() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var loginLink = document.getElementById("login");
+
+      loginLink.textContent = "Restaurant Owner Logout";
+      loginLink.href = "index.html";
+      loginLink.onclick = function() {
+        firebase.auth().signOut();
+        location.reload();
+      };
+
+      var restaurantAddLink = document.getElementById("addRestaurant");
+      restaurantAddLink.className = "nav-item nav-link";
+    }
+  });
 }
+
+window.onload = function() {
+  initNavbar();
+};

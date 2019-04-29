@@ -77,11 +77,17 @@
             <a class="nav-item nav-link" href="index.html"
               >Home <span class="sr-only">(current)</span></a
             >
-            <a class="nav-item nav-link" href="login.html"
-              >Restaurant Owner Login</a
-            >
             <a class="nav-item nav-link active" href="addRestaurant.html"
               >Add Restaurant</a
+            >
+            <a
+              class="nav-item nav-link"
+              id="login"
+              href="index.html"
+              onclick="(function(){
+                firebase.auth().signOut();
+              })"
+              >Restaurant Owner Logout</a
             >
           </div>
         </div>
@@ -100,9 +106,11 @@
           </div>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="availability" />
-            <label class="form-check-label" for="availability">Busy?</label>
+            <label class="form-check-label" id="isBusy" for="availability">Busy?</label>
           </div>
-          <button type="submit" class="btn btn-outline-primary">Submit</button>
+          <button type="button" class="btn btn-outline-primary" id="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>

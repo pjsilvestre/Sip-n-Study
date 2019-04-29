@@ -13,7 +13,13 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
   </head>
   <body>
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
@@ -60,12 +66,12 @@
             <a class="nav-item nav-link active" href="login.html"
               >Restaurant Owner Login</a
             >
-            <a class="nav-item nav-link" href="addRestaurant.html"
-              >Add Restaurant</a
-            >
           </div>
         </div>
       </nav>
+      <!-- Define the HTML element where the FirebaseUI sign-in widget will be rendered. -->
+      <div id="firebaseui-auth-container"></div>
+      <div id="loader">Loading...</div>
     </div>
 
     <script
@@ -84,6 +90,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="scripts/login.js"></script>
   </body>
 </html>
