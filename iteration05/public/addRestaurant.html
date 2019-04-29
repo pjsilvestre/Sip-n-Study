@@ -94,6 +94,10 @@
       </nav>
 
       <div class="container">
+        <div class="alert alert-success" role="alert">
+          Restaurant added!
+        </div>
+
         <form>
           <div class="form-group">
             <label for="restaurantName">Restaurant name</label>
@@ -105,10 +109,15 @@
             />
           </div>
           <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="availability" />
-            <label class="form-check-label" id="isBusy" for="availability">Busy?</label>
+            <input type="checkbox" class="form-check-input" id="isBusy" />
+            <label class="form-check-label" for="isBusy">Busy?</label>
           </div>
-          <button type="button" class="btn btn-outline-primary" id="submit">
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            id="submit"
+            href="index.html"
+          >
             Submit
           </button>
         </form>
