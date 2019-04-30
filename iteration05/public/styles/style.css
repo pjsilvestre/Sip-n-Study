@@ -9,8 +9,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .alert {
   display: none;
+}
+
+.container-fluid { 
+  padding: 0;
 }
