@@ -56,9 +56,9 @@ submitButton.addEventListener("click", () => {
 });
 
 $(document).ready(function() {
-  $("button").click(function() {
+  $("#submit").click(function() {
     $(".alert").show();
-    $("button").prop("disabled", true);
-    $("button").text("Submitted!");
+    $("#submit").prop("disabled", true);
+    $("#submit").text("Submitted!");
   });
 });
