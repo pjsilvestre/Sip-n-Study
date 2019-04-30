@@ -14,10 +14,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
-    <script
-      type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOFwBkGcgvT9F8X8htqtxDj9r9OM8QUcE&libraries=places"
-    ></script>
   </head>
   <body>
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
@@ -42,22 +38,6 @@
       firebase.initializeApp(config);
     </script>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">Sip 'n' Study</a>
@@ -76,12 +56,14 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="index.html"
               >Home <span class="sr-only">(current)</span></a
-            >
-            <a class="nav-item nav-link active" href="addRestaurant.html"
+            ><a
+              class="nav-item nav-link"
+              id="addRestaurant"
+              href="addRestaurant.html"
               >Add Restaurant</a
             >
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link active"
               id="editRestaurant"
               href="editRestaurant.html"
               >Edit Restaurant</a
@@ -98,38 +80,24 @@
           </div>
         </div>
       </nav>
-
-      <div class="container">
-        <div class="alert alert-success" role="alert">
-          Restaurant added!
-        </div>
-
-        <form>
-          <div class="form-group">
-            <label for="restaurantName">Restaurant name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="restaurantName"
-              placeholder="Enter restaurant name"
-            />
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="isBusy" />
-            <label class="form-check-label" for="isBusy">Busy?</label>
-          </div>
-          <button
-            type="button"
-            class="btn btn-outline-primary"
-            id="submit"
-            href="index.html"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
     </div>
 
-    <script type="text/javascript" src="scripts/addRestaurant.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript" src=""></script>
   </body>
 </html>

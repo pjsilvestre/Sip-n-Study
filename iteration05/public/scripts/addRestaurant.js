@@ -1,13 +1,3 @@
-function checkIfLoggedIn() {
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-    } else {
-      alert("Were you logged out?");
-      location.assign("login.html");
-    }
-  });
-}
-
 var defaultBounds = new google.maps.LatLngBounds(
   new google.maps.LatLng(37.3352, -121.8811),
   new google.maps.LatLng(37.3352, -121.8811)
@@ -18,8 +8,6 @@ var options = {
   bounds: defaultBounds,
   types: ["establishment"]
 };
-
-checkIfLoggedIn();
 
 autocomplete = new google.maps.places.Autocomplete(input, options);
 

@@ -156,7 +156,7 @@ function initMap() {
         }
 
         var markerInfoWindow = new google.maps.InfoWindow({
-          content: marker.title + availability,
+          content: marker.title + availability
         });
 
         marker.addListener("mouseover", () => {
@@ -186,6 +186,9 @@ function initNavbar() {
 
       var restaurantAddLink = document.getElementById("addRestaurant");
       restaurantAddLink.className = "nav-item nav-link";
+
+      var restaurantEditLink = document.getElementById("editRestaurant");
+      restaurantEditLink.className = "nav-item nav-link";
     }
   });
 }
