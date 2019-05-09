@@ -140,19 +140,31 @@ function initMap() {
         var lat = doc.data().location.latitude;
         var lng = doc.data().location.longitude;
         var restaurantName = doc.data().restaurantName;
-
-        var marker = new google.maps.Marker({
-          position: { lat, lng },
-          map: map,
-          title: restaurantName,
-          animation: google.maps.Animation.DROP
-        });
+        var marker;
 
         var availability = "<p>Availability: ";
         if (doc.data().isBusy) {
           availability += "Busy</p>";
+          marker = new google.maps.Marker({
+            position: { lat, lng },
+            map: map,
+            title: restaurantName,
+            animation: google.maps.Animation.DROP,
+            icon: {
+              url: "http://maps.google.com/mapfiles/kml/paddle/red-circle.png"
+            }
+          });
         } else {
           availability += "Not Busy</p>";
+          marker = new google.maps.Marker({
+            position: { lat, lng },
+            map: map,
+            title: restaurantName,
+            animation: google.maps.Animation.DROP,
+            icon: {
+              url: "http://maps.google.com/mapfiles/kml/paddle/grn-circle.png"
+            }
+          });
         }
 
         var markerInfoWindow = new google.maps.InfoWindow({
