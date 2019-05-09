@@ -174,7 +174,7 @@ function initMap() {
 
         var markerInfoWindow = new google.maps.InfoWindow({
           content:
-            "<style> p {font-size: 2em;}</style>" +
+            "<style> p {font-size: 1.5em;}</style>" +
             "<p>" +
             restaurantName +
             "</p><p>" +
@@ -184,6 +184,10 @@ function initMap() {
             "</p><p>Last updated: " +
             timeUpdated +
             "<p>"
+        });
+
+        marker.addListener("mousedown", () => {
+          markerInfoWindow.open(map, marker);
         });
 
         marker.addListener("mouseover", () => {
