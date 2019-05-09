@@ -100,8 +100,38 @@
       </nav>
 
       <div class="container">
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success" id="alertSuccess" role="alert">
           Restaurant added!
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          id="alertDanger"
+          role="alert"
+        >
+          Duplicate detected! Restaurant not added!
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div
+          class="alert alert-warning alert-dismissible fade show"
+          id="alertWarning"
+          role="alert"
+        >
+          Restaurant not added! Were you logged out?
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
 
         <form>

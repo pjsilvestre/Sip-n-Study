@@ -11,8 +11,7 @@ var options = {
 
 autocomplete = new google.maps.places.Autocomplete(input, options);
 
-var submitButton = document.getElementById("submit");
-submitButton.addEventListener("click", () => {
+function addRestaurant() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       var db = firebase.firestore();
@@ -23,30 +22,50 @@ submitButton.addEventListener("click", () => {
       } else {
         isBusy = false;
       }
+      var duplicateFound = false;
 
-      db.collection("restaurants").add({
-        restaurantName: place.name,
-        address: place.formatted_address,
-        location: new firebase.firestore.GeoPoint(
-          place.geometry.location.lat(),
-          place.geometry.location.lng()
-        ),
-        userUID: user.uid,
-        isBusy: isBusy
-      });
-      console.log("Restaurant added!");
-      // location.assign("index.html");
+      db.collection("restaurants")
+        .get()
+        .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            console.log(doc.data().restaurantName);
+            if (doc.data().restaurantName === place.name) {
+              duplicateFound = true;
+            }
+          });
+
+          if (duplicateFound) {
+            console.log("Duplicate found");
+            $("#alertDanger").show();
+          } else {
+            console.log("Duplicate not found");
+
+            db.collection("restaurants").add({
+              restaurantName: place.name,
+              address: place.formatted_address,
+              location: new firebase.firestore.GeoPoint(
+                place.geometry.location.lat(),
+                place.geometry.location.lng()
+              ),
+              userUID: user.uid,
+              isBusy: isBusy,
+              timeUpdated: new Date()
+            });
+
+            $("#alertDanger").hide();
+            $("#alertSuccess").show();
+            $("#submit").prop("disabled", true);
+            $("#submit").text("Submitted!");
+          }
+        });
     } else {
-      alert("Restaurant not added! Were you logged out?");
-      location.assign("login.html");
+      $("#alertWarning").show();
     }
   });
-});
+}
 
-$(document).ready(function() {
-  $("#submit").click(function() {
-    $(".alert").show();
-    $("#submit").prop("disabled", true);
-    $("#submit").text("Submitted!");
-  });
-});
+var submitButton = document.getElementById("submit");
+
+submitButton.addEventListener("click", addRestaurant);
