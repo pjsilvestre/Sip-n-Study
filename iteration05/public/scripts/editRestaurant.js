@@ -31,7 +31,8 @@ function initTable() {
               availabilityText.setAttribute("href", "");
               availabilityText.onclick = () => {
                 restaurantRef.update({
-                  isBusy: false
+                  isBusy: false,
+                  timeUpdated: new Date()
                 });
                 $("#table tbody tr").remove();
                 return false;
@@ -41,7 +42,8 @@ function initTable() {
               availabilityText.setAttribute("href", "");
               availabilityText.onclick = () => {
                 restaurantRef.update({
-                  isBusy: true
+                  isBusy: true,
+                  timeUpdated: new Date(),
                 });
                 $("#table tbody tr").remove();
                 return false;
