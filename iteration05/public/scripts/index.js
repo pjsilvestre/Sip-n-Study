@@ -95,46 +95,47 @@ function initMap() {
     ]
   });
 
-  // infoWindow = new google.maps.InfoWindow();
+  infoWindow = new google.maps.InfoWindow();
 
-  // // Try HTML5 geolocation.
-  // if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition(
-  //     function(position) {
-  //       var pos = {
-  //         lat: position.coords.latitude,
-  //         lng: position.coords.longitude
-  //       };
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
 
-  //       infoWindow.setPosition(pos);
-  //       infoWindow.setContent("Location found.");
-  //       infoWindow.open(map);
-  //       map.setCenter(pos);
-  //     },
-  //     function() {
-  //       handleLocationError(true, infoWindow, map.getCenter());
-  //     }
-  //   );
-  // } else {
-  //   // Browser doesn't support Geolocation
-  //   handleLocationError(false, infoWindow, map.getCenter());
-  // }
+        infoWindow.setPosition(pos);
+        infoWindow.setContent("Location found.");
+        infoWindow.open(map);
+        map.setCenter(pos);
+      },
+      function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      }
+    );
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
 
-  // function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  //   infoWindow.setPosition(pos);
-  //   infoWindow.setContent(
-  //     browserHasGeolocation
-  //       ? "Error: The Geolocation service failed."
-  //       : "Error: Your browser doesn't support geolocation."
-  //   );
-  //   infoWindow.open(map);
-  // }
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error: The Geolocation service failed."
+        : "Error: Your browser doesn't support geolocation."
+    );
+    infoWindow.open(map);
+  }
 
   var db = firebase.firestore();
 
   function initMarkers() {
     db.collection("restaurants").onSnapshot(function(querySnapshot) {
       var restaurants = [];
+
       querySnapshot.forEach(function(doc) {
         restaurants.push(doc.data().name);
         var lat = doc.data().location.latitude;
@@ -143,6 +144,7 @@ function initMap() {
         var marker;
 
         var availability = "<p>Availability: ";
+
         if (doc.data().isBusy) {
           availability += "Busy</p>";
           marker = new google.maps.Marker({
@@ -174,6 +176,7 @@ function initMap() {
         marker.addListener("mouseover", () => {
           markerInfoWindow.open(map, marker);
         });
+
         marker.addListener("mouseout", () => {
           markerInfoWindow.close();
         });
