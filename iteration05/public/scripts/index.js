@@ -141,6 +141,7 @@ function initMap() {
         var lat = doc.data().location.latitude;
         var lng = doc.data().location.longitude;
         var restaurantName = doc.data().restaurantName;
+        var address = doc.data().address;
         var marker;
 
         var availability = "<p>Availability: ";
@@ -170,7 +171,7 @@ function initMap() {
         }
 
         var markerInfoWindow = new google.maps.InfoWindow({
-          content: marker.title + availability
+          content: marker.title + availability + address
         });
 
         marker.addListener("mouseover", () => {
