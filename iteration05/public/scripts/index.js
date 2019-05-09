@@ -156,7 +156,7 @@ function initMap() {
             title: restaurantName,
             animation: google.maps.Animation.DROP,
             icon: {
-              url: "http://maps.google.com/mapfiles/kml/paddle/red-circle.png"
+              url: "https://maps.google.com/mapfiles/kml/paddle/red-circle.png"
             }
           });
         } else {
@@ -167,7 +167,7 @@ function initMap() {
             title: restaurantName,
             animation: google.maps.Animation.DROP,
             icon: {
-              url: "http://maps.google.com/mapfiles/kml/paddle/grn-circle.png"
+              url: "https://maps.google.com/mapfiles/kml/paddle/grn-circle.png"
             }
           });
         }
